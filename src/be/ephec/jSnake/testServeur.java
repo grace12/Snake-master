@@ -1,4 +1,4 @@
-package org.Snake.others;
+package be.ephec.jSnake;
 
 /**
  * @author Grâce Musuvaho, Smeyers Thibault, Boucher Kévin
@@ -6,23 +6,17 @@ package org.Snake.others;
  * 
  */
 
-import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.io.*;
 import java.net.*;
 
-import be.ephec.jSnake.Const;
-import be.ephec.jSnake.JWindow;
-
-public class Serveur implements Const {
+public class testServeur implements Const {
 	public static void main(String[] args) {
 		ServerSocket client ; //destiné a attendre des connexions
 		Socket socketduserveur; //pour gerer la connexion d'un client
 		BufferedReader in;
 		PrintWriter out;
-		JWindow jeu= null;
 		KeyEvent event = null;
-		Graphics g = null;
 
 
 		try {
@@ -45,11 +39,7 @@ public class Serveur implements Const {
 			out = new PrintWriter(socketduserveur.getOutputStream());  //sortie pour envoyer
 			out.flush();//pour envoyer des info au client necessaire à une bonne connexion
 			in = new BufferedReader(new InputStreamReader(socketduserveur.getInputStream()));            
-			out.println( "Serveur : Vous êtes connecté !" );
-
-			
-			// Etape 4: Procéder à la connexion. (voir qui controle quel serpent :/ )
-			jeu.main(args);
+			out.println( "testServeur : Vous êtes connecté !" );
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

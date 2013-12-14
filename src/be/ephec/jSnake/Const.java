@@ -32,5 +32,23 @@ public interface Const {
 	 */
 
 	public final static int CASE_PIXELS = 15;
+	
+	/**  
+	 * Constante du serveur
+	 */
+	
+	public final static int SERVER=0;
+	
+	/**  
+	 * Constante 'testClient'
+	 */ 
+	
+	 final static int CLIENT = 1;
+	
+	/** 
+	 * Constante  du num de port
+	 */
+	 
+	public final static int PORT = 1404; 
 
 }

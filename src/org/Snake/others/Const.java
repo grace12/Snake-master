@@ -39,7 +39,7 @@ public interface Const {
 	public final static int SERVER=0;
 	
 	/**  
-	 * Constante 'Client'
+	 * Constante 'testClient'
 	 */     
 	 final static int CLIENT = 1;
 	
