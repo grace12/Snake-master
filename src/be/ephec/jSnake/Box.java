@@ -9,7 +9,8 @@ package be.ephec.jSnake;
 
 /**
  * 
- * ??? expl de la classe
+ * Classe box, implémentant l'interface Const. Cette classe permet de gérer les différents cases
+ * du jeu snake.
  *
  */
 public class Box implements Const {
@@ -18,7 +19,7 @@ public class Box implements Const {
 	private int yIndice;
 
 	/**
-	 *  ???????
+	 *  Définis les X et Y indices.
 	 * @param xIndice : 
 	 * @param yIndice
 	 */
@@ -93,30 +94,30 @@ public class Box implements Const {
 	}
 
 	/**
-	 * ????
-	 * @return : 
+	 * Getter sur la largeur du plateau de jeu en pixels
+	 * @return : la largeur du plateau de jeu en pixels
 	 */
 	public int getLargeur() {
 		return CASE_PIXELS;
 	}
 
 	/**
-	 * ?????
-	 * @return
+	 * Getter sur la hauteur du plateau de jeu en pixels
+	 * @return : la hauteur du plateau de jeu en pixels
 	 */
 	public int getHauteur() {
 		return CASE_PIXELS;
 	}
-
+	
 	@Override
 	//Deux « box » sont identiques si leurs xIndice et yIndice ont les mêmes valeurs.
 	public boolean equals(Object obj) {
-		if (obj instanceof Box) {
-			Box box = (Box) obj;
-			return this.xIndice == box.xIndice
-					&& this.yIndice == box.yIndice;
-		}
-		return false;
+	      if (obj instanceof Box) {
+	           Box box = (Box) obj;
+	            return this.xIndice == box.xIndice
+	                   && this.yIndice == box.yIndice;
+	      }
+	      return false;
 	}
 
 }

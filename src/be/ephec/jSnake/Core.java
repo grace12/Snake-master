@@ -15,7 +15,8 @@ import java.awt.event.KeyEvent;
 
 /**
  * 
- * ??? expl de la classe
+ * Classe définissant les principaux "calculs" du jeu (gestion des claviers, changement de 
+ * niveau, ...)
  *
  */
 public class Core {
@@ -49,13 +50,13 @@ public class Core {
 		}
 		//Snake 2
 
-		if (event.getKeyCode() == KeyEvent.VK_S) { 				// touche flèche droite
+		if (event.getKeyCode() == KeyEvent.VK_D) { 				// touche flèche droite
 			this.snake2.setDemand(Direction.RIGHT);
 		} else if (event.getKeyCode() == KeyEvent.VK_Q) { 		// touche flèche gauche
 			this.snake2.setDemand(Direction.LEFT);
-		} else if (event.getKeyCode() == KeyEvent.VK_Z) { 		// touche flèche haut
+		} else if (event.getKeyCode() == KeyEvent.VK_S) { 		// touche flèche haut
 			this.snake2.setDemand(Direction.HIGH);
-		} else if (event.getKeyCode() == KeyEvent.VK_W) { 		// touche flèche bas
+		} else if (event.getKeyCode() == KeyEvent.VK_X) { 		// touche flèche bas
 			this.snake2.setDemand(Direction.LOW);
 		}
 	}
@@ -63,17 +64,17 @@ public class Core {
 
 
 	/**
-	 * Calcul du jeu
+	 * Calculs du jeu
 	 */
 
 	public void calcul() {
 		if (!this.finish) {
-																// calcul du serpent
+			// calcul du serpent
 			this.snake.calcul(this.pomme);
 			this.snake2.calcul(this.pomme);
 			if (this.snake.isDead() || this.snake2.isDead()) {
-																// la partie est perdue car le serpent
-																// a atteint les limites du plateau de jeu
+				/* la partie est perdue car le serpent
+																   a atteint les limites du plateau de jeu */
 				this.finish = true;
 			}
 		}
@@ -85,21 +86,21 @@ public class Core {
 	 */
 
 	public void display2(Graphics g){
-
+		
 		g.setFont(new Font(Font.SERIF, Font.BOLD, 18));
-																// Couleurs du premier serpent
+		// Couleurs du premier serpent
 		g.setColor(Color.DARK_GRAY);
 		g.drawString(String.valueOf("Score snake1: "+snake.getNbEat()), 500, 15); //5;25 = coordonnées
-
-																// Couleurs du second serpent
+		
+		// Couleurs du second serpent
 		g.setColor(Color.BLUE);
 		g.drawString(String.valueOf("Score snake2: "+snake2.getNbEat()), 5, 15); //5;25 = coordonnées
 	}
-
+	
 	public void display(Graphics g) {
-		this.snake.display(g);									// affichage des serpents
+		this.snake.display(g);			// affichage des serpents
 		this.snake2.display(g);
-		this.pomme.display(g);									// affichage de la pomme
+		this.pomme.display(g);			// affichage de la pomme
 
 		if (this.finish) {
 			String str = "Perdu !";
@@ -110,7 +111,7 @@ public class Core {
 			int y = (g.getClipBounds().height / 2) + fm.getMaxDescent();
 			g.drawString(str, x, y);
 		}		
-
+		
 	}
 
 	/**
@@ -122,10 +123,10 @@ public class Core {
 		return (this.snake.getNbEat() / 2) + 1;
 	}
 
-
+	
 	/**
 	 * Permet le changement de niveau pour le snake 1
-	 * @return ?????
+	 * @return le nombres de points du joueur
 	 */
 	public int changerNiveau() {
 		switch (getNiveau()) {
@@ -142,5 +143,7 @@ public class Core {
 			return 50;
 		}
 	}
+
+
 
 }

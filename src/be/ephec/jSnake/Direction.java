@@ -7,7 +7,7 @@ package be.ephec.jSnake;
  */
 
 /**
- * Permet d'énumerer les différents directions possibles
+ * Permet d'énumerer les différents directions possibles dans le jeu
  *
  */
 

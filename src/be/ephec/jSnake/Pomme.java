@@ -12,7 +12,7 @@ import java.util.Random;
 
 /**
  * 
- * Définis la "pomme" dans le jeu
+ * Définis la "pomme" dans le jeu, où se place-t-elle (ligne, colone),...
  *
  */
 

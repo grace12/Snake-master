@@ -1,7 +1,6 @@
 package be.ephec.jSnake;
 
 /**
- * 
  * @author Grâce Musuvaho, Kévin Boucher, Smeyers Thibault
  * @version 0.1
  * 
@@ -36,19 +35,16 @@ public interface Const {
 	/**  
 	 * Constante du serveur
 	 */
-	
 	public final static int SERVER=0;
 	
 	/**  
-	 * Constante 'testClient'
-	 */ 
-	
+	 * Constante 'Client', définis le nombre de client maximum
+	 */     
 	 final static int CLIENT = 1;
 	
 	/** 
-	 * Constante  du num de port
+	 * Constante  du numéro de port
 	 */
-	 
 	public final static int PORT = 1404; 
 
 }

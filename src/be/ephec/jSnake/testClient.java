@@ -9,7 +9,12 @@ import java.net.*;
 import java.util.Scanner;
 import java.io.*; 
 
-
+/**
+ * 
+ * Classe client, permet au second joueur de se connecter avec le premier joueur ( faisant
+ * office de serveur) via le réseau local auxquels doivent être connectés les deux ordinateurs.
+ *
+ */
 public class testClient implements Const {
 
 	public static void main(String[] args) {

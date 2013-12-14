@@ -10,6 +10,13 @@ import java.awt.event.KeyEvent;
 import java.io.*;
 import java.net.*;
 
+/**
+ * 
+ * Cette classe définis le joueur "serveur", c'est à dire, celui qui sera l'hôte du jeu
+ * auquel le second joueur qualifié de client se connectera pour jouer en réseau au jeu.
+ *
+ */
+
 public class testServeur implements Const {
 	public static void main(String[] args) {
 		ServerSocket client ; //destiné a attendre des connexions
