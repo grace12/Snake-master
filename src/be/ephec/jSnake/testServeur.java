@@ -1,7 +1,7 @@
 package be.ephec.jSnake;
 
 /**
- * @author Grâce Musuvaho, Smeyers Thibault, Boucher Kévin
+ * @author Grï¿½ce Musuvaho, Smeyers Thibault, Boucher Kï¿½vin
  * @version 0.1
  * 
  */
@@ -12,23 +12,23 @@ import java.net.*;
 
 /**
  * 
- * Cette classe définis le joueur "serveur", c'est à dire, celui qui sera l'hôte du jeu
- * auquel le second joueur qualifié de client se connectera pour jouer en réseau au jeu.
+ * Cette classe dï¿½finis le joueur "serveur", c'est ï¿½ dire, celui qui sera l'hï¿½te du jeu
+ * auquel le second joueur qualifiï¿½ de client se connectera pour jouer en rï¿½seau au jeu.
  *
  */
 
 public class testServeur implements Const {
 	public static void main(String[] args) {
-		ServerSocket client ; //destiné a attendre des connexions
+		ServerSocket client ; //destinï¿½ a attendre des connexions
 		Socket socketduserveur; //pour gerer la connexion d'un client
 		BufferedReader in;
 		PrintWriter out;
-		KeyEvent event = null;
+		
 
 
 		try {
-			// Etape 1: Créer un ServerSocket.
-			client = new ServerSocket( PORT, 1 ); //(n°port,long file d'attente)
+			// Etape 1: Crï¿½er un ServerSocket.
+			client = new ServerSocket( PORT, 1 ); //(nï¿½port,long file d'attente)
 			//affichage du nom de la machine locale
 			System.out.println("Adresse de la machine : "+InetAddress.getLocalHost().getHostAddress());
 			System.out.println("Nom de la machine : "+InetAddress.getLocalHost().getHostName());
@@ -38,15 +38,15 @@ public class testServeur implements Const {
 			socketduserveur = client.accept();//pour ecouter
 			//cette methode se bloque jusqu'a reception d'une connexion
 
-			System.out.println( "Connexion " +" reçue de:  " +                //getInetAddress() recupere l'@ internet de l'ordinateur client qui vient de se connecter
-					socketduserveur.getInetAddress().getHostName() );  //getHostName() renvoie le nom d'hote associe à cette @
+			System.out.println( "Connexion " +" reï¿½ue de:  " +                //getInetAddress() recupere l'@ internet de l'ordinateur client qui vient de se connecter
+					socketduserveur.getInetAddress().getHostName() );  //getHostName() renvoie le nom d'hote associe ï¿½ cette @
 
 
-			// Etape 3: Get des flux d'entrée et de sortie.A FAIRE TOUJOURS DANS CET ORDRE
+			// Etape 3: Get des flux d'entrï¿½e et de sortie.A FAIRE TOUJOURS DANS CET ORDRE
 			out = new PrintWriter(socketduserveur.getOutputStream());  //sortie pour envoyer
-			out.flush();//pour envoyer des info au client necessaire à une bonne connexion
+			out.flush();//pour envoyer des info au client necessaire ï¿½ une bonne connexion
 			in = new BufferedReader(new InputStreamReader(socketduserveur.getInputStream()));            
-			out.println( "testServeur : Vous êtes connecté !" );
+			out.println( "testServeur : Vous ï¿½tes connectï¿½ !" );
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
