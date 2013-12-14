@@ -1,7 +1,7 @@
 package be.ephec.jSnake;
 
 /**
- * @author Grâce Musuvaho, Boucher Kévin, Smeyers Thibault
+ * @author Grï¿½ce Musuvaho, Boucher Kï¿½vin, Smeyers Thibault
  * @version 0.1
  */
 
@@ -12,7 +12,7 @@ import java.io.*;
 /**
  * 
  * Classe client, permet au second joueur de se connecter avec le premier joueur ( faisant
- * office de serveur) via le réseau local auxquels doivent être connectés les deux ordinateurs.
+ * office de serveur) via le rï¿½seau local auxquels doivent ï¿½tre connectï¿½s les deux ordinateurs.
  *
  */
 public class testClient implements Const {
@@ -20,8 +20,6 @@ public class testClient implements Const {
 	public static void main(String[] args) {
 	
 		String adresServeur ;
-		ServerSocket serveur;				//destiné a attendre des connexions
-		Socket connexion;					//pour gerer la connexion d'un client
 		Socket client; 
 		BufferedReader in;
 		PrintStream out;
@@ -33,12 +31,12 @@ public class testClient implements Const {
 			System.out.println( "Quel est l'adresse de la machine adverse ?");
 			adresServeur = sc.nextLine();
 
-			// Etape 1: Créer un Socket pour assurer la connexion.
+			// Etape 1: Crï¿½er un Socket pour assurer la connexion.
 			System.out.println("Tentative de connexion");
 			client = new Socket(adresServeur, PORT );
-			System.out.println( "Connecté à: " +client.getInetAddress().getHostName() );
+			System.out.println( "Connectï¿½ ï¿½: " +client.getInetAddress().getHostName() );
 
-			// Etape 2: Get des flux d'entrée et de sortie.
+			// Etape 2: Get des flux d'entrï¿½e et de sortie.
 			out= new PrintStream(client.getOutputStream() );
 			out.flush();
 			in = new BufferedReader( new InputStreamReader(client.getInputStream()) );
@@ -46,7 +44,7 @@ public class testClient implements Const {
 
 		}//fin try
 		catch ( EOFException eof ) {
-			System.out.println( "testServeur a clôturé la connexion" );
+			System.out.println( "testServeur a clï¿½turï¿½ la connexion" );
 		}
 		catch ( IOException e ) {
 			e.printStackTrace();
