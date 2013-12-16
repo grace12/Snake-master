@@ -8,14 +8,14 @@ import java.awt.event.KeyEvent;
 
 /**
  * 
- * @author Grâce Musuvaho, Kévin Boucher, Smeyers Thibault
+ * @author Grï¿½ce Musuvaho, Kï¿½vin Boucher, Smeyers Thibault
  * @version 0.1
  * 
  */
 
 /**
  * 
- * Classe définissant les principaux "calculs" du jeu (gestion des claviers, changement de 
+ * Classe dï¿½finissant les principaux "calculs" du jeu (gestion des claviers, changement de 
  * niveau, ...)
  *
  */
@@ -39,24 +39,24 @@ public class Core {
 	 */
 
 	public void KeyboardGestion(KeyEvent event) {
-		if (event.getKeyCode() == KeyEvent.VK_RIGHT) { 			// touche flèche droite
+		if (event.getKeyCode() == KeyEvent.VK_RIGHT) { 			// touche flï¿½che droite
 			this.snake.setDemand(Direction.RIGHT);
-		} else if (event.getKeyCode() == KeyEvent.VK_LEFT) { 	// touche flèche gauche
+		} else if (event.getKeyCode() == KeyEvent.VK_LEFT) { 	// touche flï¿½che gauche
 			this.snake.setDemand(Direction.LEFT);
-		} else if (event.getKeyCode() == KeyEvent.VK_UP) { 		// touche flèche haut
+		} else if (event.getKeyCode() == KeyEvent.VK_UP) { 		// touche flï¿½che haut
 			this.snake.setDemand(Direction.HIGH);
-		} else if (event.getKeyCode() == KeyEvent.VK_DOWN) { 	// touche flèche bas
+		} else if (event.getKeyCode() == KeyEvent.VK_DOWN) { 	// touche flï¿½che bas
 			this.snake.setDemand(Direction.LOW);
 		}
 		//Snake 2
 
-		if (event.getKeyCode() == KeyEvent.VK_D) { 				// touche flèche droite
+		if (event.getKeyCode() == KeyEvent.VK_D) { 				// touche flï¿½che droite
 			this.snake2.setDemand(Direction.RIGHT);
-		} else if (event.getKeyCode() == KeyEvent.VK_Q) { 		// touche flèche gauche
+		} else if (event.getKeyCode() == KeyEvent.VK_Q) { 		// touche flï¿½che gauche
 			this.snake2.setDemand(Direction.LEFT);
-		} else if (event.getKeyCode() == KeyEvent.VK_S) { 		// touche flèche haut
+		} else if (event.getKeyCode() == KeyEvent.VK_S) { 		// touche flï¿½che haut
 			this.snake2.setDemand(Direction.HIGH);
-		} else if (event.getKeyCode() == KeyEvent.VK_X) { 		// touche flèche bas
+		} else if (event.getKeyCode() == KeyEvent.VK_X) { 		// touche flï¿½che bas
 			this.snake2.setDemand(Direction.LOW);
 		}
 	}
@@ -90,11 +90,11 @@ public class Core {
 		g.setFont(new Font(Font.SERIF, Font.BOLD, 18));
 		// Couleurs du premier serpent
 		g.setColor(Color.DARK_GRAY);
-		g.drawString(String.valueOf("Score snake1: "+snake.getNbEat()), 500, 15); //5;25 = coordonnées
+		g.drawString(String.valueOf("Score snake1: "+snake.getNbEat()), 500, 15); //5;25 = coordonnï¿½es
 		
 		// Couleurs du second serpent
 		g.setColor(Color.BLUE);
-		g.drawString(String.valueOf("Score snake2: "+snake2.getNbEat()), 5, 15); //5;25 = coordonnées
+		g.drawString(String.valueOf("Score snake2: "+snake2.getNbEat()), 5, 15); //5;25 = coordonnï¿½es
 	}
 	
 	public void display(Graphics g) {
@@ -108,16 +108,27 @@ public class Core {
 			g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 50));
 			FontMetrics fm = g.getFontMetrics();
 			int x = (g.getClipBounds().width - fm.stringWidth(str)) / 2;
-			int y = (g.getClipBounds().height / 2) + fm.getMaxDescent();
+			int y = (g.getClipBounds().height / 3) + fm.getMaxDescent();
 			g.drawString(str, x, y);
+			
+			String s="Gagnant :";
+				g.setColor(Color.RED);
+				g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 35));
+				FontMetrics f = g.getFontMetrics();
+				int x1 = (g.getClipBounds().width/4 - f.stringWidth(str));
+				int y1 = (g.getClipBounds().height/2) + f.getMaxDescent();
+				
+				if(snake.getNbEat()>snake2.getNbEat()) g.drawString(s+"Joueur 1", x1, y1);
+				else if(snake.getNbEat()>snake2.getNbEat())  g.drawString(s+"Joueur 2", x1, y1);
+				else g.drawString(s+" aucun, match null", x1, y1);
 		}		
 		
 	}
 
 	/**
 	 * Getter sur le niveau du premier serpent
-	 * @return : le nombre de pommes mangées par le premier serpent 
-	 * Le niveau augmente après 5 pommes (+1 = niveau commence à 1)
+	 * @return : le nombre de pommes mangï¿½es par le premier serpent 
+	 * Le niveau augmente aprï¿½s 5 pommes (+1 = niveau commence ï¿½ 1)
 	 */
 	public int getNiveau() {
 		return (this.snake.getNbEat() / 2) + 1;
